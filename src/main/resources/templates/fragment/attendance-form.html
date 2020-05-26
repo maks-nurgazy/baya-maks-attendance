@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AKKHOR | Student Attendance</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/css/all.min.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/fonts/flaticon.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/css/animate.min.css">
+    <!-- Date Picker CSS -->
+    <link rel="stylesheet" href="/css/datepicker.min.css">
+    <!-- Select 2 CSS -->
+    <link rel="stylesheet" href="/css/select2.min.css">
+    <!-- Data Table CSS -->
+    <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/style.css">
+    <!-- Modernize js -->
+    <script src="/js/modernizr-3.6.0.min.js"></script>
+</head>
+
+<body>
+<!-- Preloader Start Here -->
+<div id="preloader"></div>
+<!-- Preloader End Here -->
+<div id="wrapper" class="wrapper bg-ash">
+    <!-- Header Menu Area Start Here -->
+    <div th:replace="fragment/index::header"></div>
+    <!-- Header Menu Area End Here -->
+    <!-- Page Area Start Here -->
+    <div class="dashboard-page-one">
+        <!-- Sidebar Area Start Here -->
+        <div th:replace="fragment/index::sidebar"></div>
+        <!-- Sidebar Area End Here -->
+        <div class="dashboard-content-one">
+            <!-- Breadcubs Area Start Here -->
+            <div class="breadcrumbs-area">
+                <h3>Student Attendence</h3>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>Attendence</li>
+                </ul>
+            </div>
+            <!-- Breadcubs Area End Here -->
+            <div class="row">
+                <!-- Student Attendence Search Area Start Here -->
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="heading-layout1">
+                                <div class="item-title">
+                                    <h3>Student Attendence</h3>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" href="student-attendance.html#" role="button"
+                                       data-toggle="dropdown" aria-expanded="false">...</a>
+
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="student-attendance.html#"><i
+                                                class="fas fa-times text-orange-red"></i>Close</a>
+                                        <a class="dropdown-item" href="student-attendance.html#"><i
+                                                class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                        <a class="dropdown-item" href="student-attendance.html#"><i
+                                                class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="new-added-form">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-12 form-group">
+                                        <label>Select Class</label>
+                                        <select id="selected_subject" class="select2">
+                                            <option value="">Select Subject</option>
+                                            <option value="1">Select Subject</option>
+                                            <option value="">Select Subject</option>
+                                            <option value="">Select Subject</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Select Type</label>
+                                        <select class="select2">
+                                            <option value="1">Theory</option>
+                                            <option value="2">Practice</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Select Date</label>
+                                        <input type="text" placeholder="dd/mm/yyyy"
+                                               class="form-control air-datepicker">
+                                        <i class="far fa-calendar-alt"></i>
+                                    </div>
+                                    <div class="col-12 form-group mg-t-8">
+                                        <button type="submit"
+                                                class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save
+                                        </button>
+                                        <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Student Attendence Search Area End Here -->
+                <!-- Student Attendence Area Start Here -->
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="heading-layout1">
+                                <div class="item-title">
+                                    <h3>Attendence Sheet Of Class One: Section A, April 2019</h3>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" href="student-attendance.html#" role="button"
+                                       data-toggle="dropdown" aria-expanded="false">...</a>
+
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="student-attendance.html#"><i
+                                                class="fas fa-times text-orange-red"></i>Close</a>
+                                        <a class="dropdown-item" href="student-attendance.html#"><i
+                                                class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                        <a class="dropdown-item" href="student-attendance.html#"><i
+                                                class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="student-list-section" class="table-responsive">
+                                <!--table bs-table table-striped table-bordered text-nowrap-->
+<!--                                table display data-table text-nowrap-->
+                                <table id="student-list" th:fragment="student-list" class="table display data-table text-nowrap table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input checkAll">
+                                                <label class="form-check-label">Roll</label>
+                                            </div>
+                                        </th>
+                                        <th>Photo</th>
+                                        <th>Firstname</th>
+                                        <th>Lastname</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="student:${students}">
+                                        <td>
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input">
+                                                <label class="form-check-label" th:text="${student.userName}">#0021</label>
+                                            </div>
+                                        </td>
+                                        <td class="text-center"><img src="/img/figure/student2.png" alt="student"></td>
+                                        <td th:text="${student.firstName}">Mark</td>
+                                        <td th:text="${student.lastName}">Willy</td>
+                                        <td class="badge badge-pill badge-danger d-block mg-t-8">Absent</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Student Attendence Area End Here -->
+            <footer class="footer-wrap-layout1">
+                <div class="copyright">© Copyrights <a href="student-attendance.html#">akkhor</a> 2019. All rights
+                    reserved. Designed by <a href="student-attendance.html#">PsdBosS</a></div>
+            </footer>
+        </div>
+    </div>
+    <!-- Page Area End Here -->
+</div>
+
+
+
+<!-- jquery-->
+<script src="/js/jquery-3.3.1.min.js"></script>
+<!-- Plugins js -->
+<script src="/js/plugins.js"></script>
+<!-- Popper js -->
+<script src="/js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="/js/bootstrap.min.js"></script>
+<!-- Select 2 Js -->
+<script src="/js/select2.min.js"></script>
+<!-- Scroll Up Js -->
+<script src="/js/jquery.scrollUp.min.js"></script>
+<!-- Date Picker Js -->
+<script src="/js/datepicker.min.js"></script>
+<!-- Data Table Js -->
+<script src="/js/jquery.dataTables.min.js"></script>
+<!-- Custom Js -->
+<script src="/js/main.js"></script>
+
+
+</body>
+
+</html>
