@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>BayaMaks | Home 3</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="fonts/flaticon.css">
+    <!-- Full Calender CSS -->
+    <link rel="stylesheet" href="css/fullcalendar.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- Data Table CSS -->
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Modernize js -->
+    <script src="js/modernizr-3.6.0.min.js"></script>
+</head>
+
+<body>
+<!-- Preloader Start Here -->
+<div id="preloader"></div>
+<!-- Preloader End Here -->
+<div id="wrapper" class="wrapper bg-ash">
+    <!-- Header Menu Area Start Here -->
+    <div th:replace="fragment/index::header"></div>
+    <!-- Header Menu Area End Here -->
+    <!-- Page Area Start Here -->
+    <div class="dashboard-page-one">
+        <!-- Sidebar Area Start Here -->
+        <div th:replace="fragment/index::sidebar"></div>
+        <!-- Sidebar Area End Here -->
+        <div class="dashboard-content-one">
+            <!-- Breadcubs Area Start Here -->
+            <div class="breadcrumbs-area">
+                <h3 th:text="${#strings.replace(#authentication.getAuthorities()[0],'ROLE_','') + ' '+'Dashboard'}">
+                    Admin Dashboard</h3>
+                <ul>
+                    <li>
+                        <a href="index">Home</a>
+                    </li>
+                    <li>Student</li>
+                </ul>
+            </div>
+            <!-- Breadcubs Area End Here -->
+            <div class="row">
+                <!-- Student Info Area Start Here -->
+                <div class="col-4-xxxl col-12">
+                    <div class="card dashboard-card-ten">
+                        <div class="card-body">
+                            <div class="heading-layout1">
+                                <div class="item-title">
+                                    <h3 th:text="About+' '+ ${studentDetails.firstName}">About Me</h3>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" href="index3.html#" role="button" data-toggle="dropdown"
+                                       aria-expanded="false">...</a>
+
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="index3.html#"><i
+                                                class="fas fa-times text-orange-red"></i>Close</a>
+                                        <a class="dropdown-item" href="index3.html#"><i
+                                                class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                        <a class="dropdown-item" href="index3.html#"><i
+                                                class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="student-info">
+                                <div class="media media-none--xs">
+                                    <div class="item-img">
+                                        <img src="/img/figure/student.png" class="media-img-auto" alt="student">
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="item-title"
+                                            th:text="${studentDetails.firstName}+' '+${studentDetails.lastName}">Jessia
+                                            Rose</h3>
+                                        <p>Aliquam erat volutpat. Curabiene natis massa
+                                            sedde lacustiquen sodale word moun taiery.</p>
+                                    </div>
+                                </div>
+                                <div class="table-responsive info-table">
+                                    <table class="table text-nowrap">
+                                        <tbody>
+                                        <tr>
+                                            <td>FirstName:</td>
+                                            <td class="font-medium text-dark-medium"
+                                                th:text="${studentDetails.firstName}">Rose
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>LastName:</td>
+                                            <td class="font-medium text-dark-medium"
+                                                th:text="${studentDetails.lastName}">Jessi
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Gender:</td>
+                                            <td class="font-medium text-dark-medium" th:text="${studentDetails.gender}">
+                                                Female
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>E-Mail:</td>
+                                            <td class="font-medium text-dark-medium" th:text="${studentDetails.email}">
+                                                jessiarose@gmail.com
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Class:</td>
+                                            <td class="font-medium text-dark-medium" th:text="${studentDetails.grade}">
+                                                2
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Student ID:</td>
+                                            <td class="font-medium text-dark-medium" th:text="${studentDetails.id}">
+                                                10005
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Address:</td>
+                                            <td class="font-medium text-dark-medium"
+                                                th:text="${studentDetails.address}">House #10, Road #6,
+                                                Australia
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phone:</td>
+                                            <td class="font-medium text-dark-medium" th:text="${studentDetails.phone}">+
+                                                88 9856418
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Student Info Area End Here -->
+                <div class="col-8-xxxl col-12">
+                    <div class="row">
+                        <!-- Summery Area Start Here -->
+                        <div class="col-lg-4">
+                            <div class="dashboard-summery-one">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="item-icon bg-light-yellow">
+                                            <i class="flaticon-percentage-discount text-orange"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="item-content">
+                                            <div class="item-title">Attendance</div>
+                                            <div class="item-number"><span class="counter" data-num="94">94</span><span>%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Summery Area End Here -->
+                        <!-- Exam Result Area Start Here -->
+                        <div class="col-lg-12">
+                            <div class="card dashboard-card-eleven">
+                                <div class="card-body">
+                                    <div class="heading-layout1">
+                                        <div class="item-title">
+                                            <h3>All Attendance</h3>
+                                        </div>
+                                        <div class="dropdown">
+                                            <a class="dropdown-toggle" href="index3.html#" role="button"
+                                               data-toggle="dropdown"
+                                               aria-expanded="false">...</a>
+
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="index3.html#"><i
+                                                        class="fas fa-times text-orange-red"></i>Close</a>
+                                                <a class="dropdown-item" href="index3.html#"><i
+                                                        class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                                                <a class="dropdown-item" href="index3.html#"><i
+                                                        class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-box-wrap">
+                                        <form class="search-form-box">
+                                            <div class="row gutters-8">
+                                                <div class="col-lg-4 col-12 form-group">
+                                                    <input type="text" placeholder="Search by Exam ..."
+                                                           class="form-control">
+                                                </div>
+                                                <div class="col-lg-3 col-12 form-group">
+                                                    <input type="text" placeholder="Search by Subject ..."
+                                                           class="form-control">
+                                                </div>
+                                                <div class="col-lg-3 col-12 form-group">
+                                                    <input type="text" placeholder="dd/mm/yyyy"
+                                                           class="form-control">
+                                                </div>
+                                                <div class="col-lg-2 col-12 form-group">
+                                                    <button type="submit"
+                                                            class="fw-btn-fill btn-gradient-yellow">SEARCH
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="table-responsive result-table-box">
+                                            <table class="table display data-table text-nowrap">
+                                                <thead>
+                                                <tr>
+                                                    <th>Code</th>
+                                                    <th>Name</th>
+                                                    <th>Percent</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:each="subject:${studentDetails.getSubjects()}">
+                                                    <td th:text="${subject.code}">Code</td>
+                                                    <td th:text="${subject.name}">Name</td>
+                                                    <td th:text="100">Percent</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Exam Result Area End Here -->
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Area Start Here -->
+            <footer th:replace="fragment/index::footer"></footer>
+            <!-- Footer Area End Here -->
+        </div>
+    </div>
+    <!-- Page Area End Here -->
+</div>
+<!-- jquery-->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- Plugins js -->
+<script src="js/plugins.js"></script>
+<!-- Popper js -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Counterup Js -->
+<script src="js/jquery.counterup.min.js"></script>
+<!-- Moment Js -->
+<script src="js/moment.min.js"></script>
+<!-- Waypoints Js -->
+<script src="js/jquery.waypoints.min.js"></script>
+<!-- Scroll Up Js -->
+<script src="js/jquery.scrollUp.min.js"></script>
+<!-- Full Calender Js -->
+<script src="js/fullcalendar.min.js"></script>
+<!-- Chart Js -->
+<script src="js/Chart.min.js"></script>
+<!-- Data Table Js -->
+<script src="js/jquery.dataTables.min.js"></script>
+<!-- Custom Js -->
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
