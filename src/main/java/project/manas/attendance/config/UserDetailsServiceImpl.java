@@ -1,19 +1,11 @@
 package project.manas.attendance.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import project.manas.attendance.entity.User;
-import project.manas.attendance.model.Role;
 import project.manas.attendance.service.UserService;
-
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
